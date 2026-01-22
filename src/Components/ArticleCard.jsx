@@ -7,7 +7,8 @@ function ArticleCard({ image, title, actionLabel, onAction }) {
       
       {/* Image à gauche */}
       <Avatar
-    src={`http://192.168.1.24:8088/images/${image}`}
+    //src={`http://192.168.1.24:8088/images/${image}`}
+    src={`${process.env.REACT_APP_API_URL}/images/${image}`}
     alt={title}
     sx={{
       width: 64,

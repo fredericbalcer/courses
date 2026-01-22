@@ -19,7 +19,9 @@ function App() {
   };
 
     const fetchAll = () => {
-    fetch('http://192.168.1.24:8088/api/allcourses')
+    //fetch('http://192.168.1.24:8088/api/allcourses')
+    fetch(`${process.env.REACT_APP_API_URL}/api/allcourses`)
+      
       .then(res => res.json())
       .then(data => setAllArticles(data))
       .catch(console.error);
@@ -43,8 +45,9 @@ function App() {
     },
   });
 
+  //const response = await fetch(`${process.env.REACT_APP_API_URL}/api/contact`, 
 const checkArticle = (id) => {
-  fetch(`http://192.168.1.24:8088/api/courses/${id}/check`, {
+  fetch(`${process.env.REACT_APP_API_URL}/api/courses/${id}/check`, {
     method: 'PUT'
   })
   .then(() => {
@@ -57,7 +60,7 @@ const checkArticle = (id) => {
 };
 
   const uncheckArticle = (id) => {
-    fetch(`http://192.168.1.24:8088/api/courses/${id}/uncheck`, { method: 'PUT' })
+    fetch(`${process.env.REACT_APP_API_URL}/api/courses/${id}/uncheck`, { method: 'PUT' })
       .then(fetchCourses);
   };
 
