@@ -1,9 +1,7 @@
-import * as React from 'react';
-import { Card, CardContent, CardMedia, Typography, Box, IconButton, Avatar } from '@mui/material';
-import CheckCircleIcon from '@mui/icons-material/CheckCircle';
+import { Card, Typography, Box, IconButton, Avatar } from '@mui/material';
 function ArticleCard({ image, title, actionLabel, onAction }) {
     
-    //console.log(myImg);
+    
   return (
     <Card sx={{ backgroundColor: '#f5f0c8',display: 'flex', maxWidth: 300, alignItems: 'center', justifyContent: 'space-between', padding:1, margin: 1, boxShadow: 3 }}>
       
