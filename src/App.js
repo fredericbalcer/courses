@@ -12,7 +12,7 @@ function App() {
   const [view, setView] = useState('courses'); // 'selection' | 'courses'
 
   const fetchCourses = () => {
-    fetch('http://192.168.1.24:8088/api/courses')
+    fetch(`${process.env.REACT_APP_API_URL}/api/courses`)
       .then(res => res.json())
       .then(data => setArticles(data))
       .catch(console.error);
